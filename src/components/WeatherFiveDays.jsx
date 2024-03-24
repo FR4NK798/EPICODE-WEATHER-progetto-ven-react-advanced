@@ -2,6 +2,7 @@ import { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Accordion from "react-bootstrap/Accordion";
 
 // data di oggi in formato come l'array
 const event = new Date();
@@ -91,7 +92,10 @@ class weatherDataFiveDays extends Component {
 
     return (
       <>
-      <h1 className="position-absolute">Temperatura dei prossimi 4 giorni</h1>
+         <Accordion defaultActiveKey="1">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Mostra Prevision dei prossimi 4 giorni</Accordion.Header>
+        <Accordion.Body>
         <Row xs={12} md={6} lg={2}>
         
             {
@@ -164,6 +168,11 @@ class weatherDataFiveDays extends Component {
             })}
         
         </Row>
+        </Accordion.Body>
+      </Accordion.Item>
+      
+    </Accordion>
+
 
       </>
     );
