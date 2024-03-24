@@ -1,13 +1,13 @@
 import {useState, useEffect} from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+// import { useParams, useNavigate } from 'react-router-dom'
 
 const MeteoFetch =()=>{
     const [weatherAdv, setWeatherAdv] = useState([])
   
-    const params = useParams()
-    console.log('PARAMS', params)
-    const navigate = useNavigate()
-    console.log('params locationID', params.locationID)
+    // const params = useParams()
+    // console.log('PARAMS', params)
+    // const navigate = useNavigate()
+    // console.log('params locationID', params.locationID)
 
     
     // const url ='api.openweathermap.org/data/2.5/forecast?q='

@@ -127,6 +127,43 @@ class SearchLocalit extends Component {
         // setIsError(true)
       });
   };
+  fetchWeatherWithNoAutorizationFiveDays = () => {
+    // if (navigator.geolocation) {
+    //   navigator.geolocation.getCurrentPosition((position) => {
+    // const long = position.coords.longitude;
+    // const lat = position.coords.latitude;
+    // api.openeathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${this.state.locationID}&appid=8d3bae94456e6a1dbe66ca4b6182e29e`;
+
+    fetch(url)
+      .then((response) => {
+        console.log("response", response);
+        console.log("url fetch five days", url);
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Problema nella chiamata API");
+        }
+      })
+      .then((data) => {
+        console.log("dati da fetch five days", data);
+
+        // COME SI SALVA STATO
+        this.setState({
+          weatherDataFiveDays: data.list,
+        });
+        // setIsLoading(false)
+        // METTERE LOADING
+      })
+      .catch((error) => {
+        console.log("ERRORE", error);
+        // setIsLoading(false)
+        // setIsError(true)
+      });
+    //   });
+    // }
+  };
 
   componentDidMount() {
     this.fetchWeatherWithLocAutorization();
@@ -138,6 +175,7 @@ class SearchLocalit extends Component {
     if (prevState.locationID !== this.state.locationID) {
       // ...solo quando c'è stato un cambio della prop movieTitle
       this.fetchWeatherWithNoAutorization();
+      this.fetchWeatherWithNoAutorizationFiveDays();
     }
   }
 
