@@ -16,7 +16,7 @@ class SearchLocalit extends Component {
 
   state = {
     // weatherAdv : '',
-    locationID: "Senise",
+    locationID: "",
     weatherData: "",
     weatherDataFiveDays: "",
   };
@@ -197,6 +197,11 @@ class SearchLocalit extends Component {
               value={this.state.locationID}
             >
               <option>Chiaromonte</option>
+              <option>Senise</option>
+              <option>Francavilla in Sinni</option>
+              <option>Potenza</option>
+              <option>Roma</option>
+              <option>Torino</option>
               <option>Milano</option>
               <option>Londra</option>
             </Form.Select>
