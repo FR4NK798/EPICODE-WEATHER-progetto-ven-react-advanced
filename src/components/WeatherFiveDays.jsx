@@ -6,21 +6,21 @@ import Accordion from "react-bootstrap/Accordion";
 
 // data di oggi in formato come l'array
 const event = new Date();
-console.log("data", event);
+// console.log("data", event);
 
 const anno = event.getFullYear();
-console.log("anno", anno);
+// console.log("anno", anno);
 
 const zero = "0";
 const mese = zero.concat(event.getMonth() + 1);
-console.log("mese", mese);
+// console.log("mese", mese);
 
 const giorno = event.getDate();
-console.log("giorno", giorno);
+// console.log("giorno", giorno);
 
 const tratto = "-";
 const dataCompleta = anno + tratto + mese + tratto + giorno;
-console.log("data completa", dataCompleta);
+// console.log("data completa", dataCompleta);
 // 2024-03-29
 
 // data da array
@@ -110,20 +110,20 @@ class weatherDataFiveDays extends Component {
               // console.log('data da fetch', dataDaFetch)
 
               const datastring = dataDaFetch.slice(0, 1).toString();
-              console.log("data estratta dentro map", datastring);
-              console.log("data attuale dentro map", dataCompleta);
+            //   console.log("data estratta dentro map", datastring);
+            //   console.log("data attuale dentro map", dataCompleta);
 
               const dataEstrattaSplit = datastring.split("-");
               const dataAttualeSplit = dataCompleta.split("-");
-              console.log("data Estratta Split", dataEstrattaSplit);
-              console.log("data Attuale Split", dataAttualeSplit);
+            //   console.log("data Estratta Split", dataEstrattaSplit);
+            //   console.log("data Attuale Split", dataAttualeSplit);
 
               const annoEstratto = dataEstrattaSplit.slice(0, 1).toString();
               const meseEstratto = dataEstrattaSplit.slice(1, 2).toString();
               const giornostratto = dataEstrattaSplit.slice(2, 3).toString();
-              console.log("annoEstratto", annoEstratto);
-              console.log("meseEstratto", meseEstratto);
-              console.log("giornostratto", giornostratto);
+            //   console.log("annoEstratto", annoEstratto);
+            //   console.log("meseEstratto", meseEstratto);
+            //   console.log("giornostratto", giornostratto);
 
               const annoAttualeEstratto = dataAttualeSplit
                 .slice(0, 1)
@@ -134,19 +134,19 @@ class weatherDataFiveDays extends Component {
               const giornoAttualestratto = dataAttualeSplit
                 .slice(2, 3)
                 .toString();
-              console.log("annoAttualeEstratto", annoAttualeEstratto);
-              console.log("meseAttualeEstratto", meseAttualeEstratto);
-              console.log("giornoAttualestratto", giornoAttualestratto);
+            //   console.log("annoAttualeEstratto", annoAttualeEstratto);
+            //   console.log("meseAttualeEstratto", meseAttualeEstratto);
+            //   console.log("giornoAttualestratto", giornoAttualestratto);
 
-              console.log("giorno MAP", giorno);
+            //   console.log("giorno MAP", giorno);
               if (
                 annoEstratto === annoAttualeEstratto &&
                 meseEstratto === meseAttualeEstratto &&
                 giornostratto === giornoAttualestratto
               ) {
-                console.log(
-                  "stesso GIORNO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-                );
+                // console.log(
+                //   "stesso GIORNO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+                // );
 
               }else{
                 return (

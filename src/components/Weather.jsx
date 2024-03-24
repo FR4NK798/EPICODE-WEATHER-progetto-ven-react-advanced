@@ -30,6 +30,46 @@ class Weather extends Component {
             <Card.Text>
               {/* <Card.Title>{this.state.dati.main.temp}</Card.Title> */}
               <Card.Title>{gradi} &#176;</Card.Title>
+              {console.log("icona", this.props.data.weather[0].icon)}
+              {this.props.data.weather[0].icon === "11d" && (
+                <img src="https://openweathermap.org/img/wn/11d@2x.png" alt=''></img>
+              )}
+              {this.props.data.weather[0].icon === "09d" && (
+                <img src="https://openweathermap.org/img/wn/09d@2x.png" alt=''></img>
+              )}
+               {this.props.data.weather[0].icon === "10d" && (
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt=''></img>
+              )}
+              {this.props.data.weather[0].icon === "13d" && (
+                <img src="https://openweathermap.org/img/wn/13d@2x.png" alt=''></img>
+              )}
+              {this.props.data.weather[0].icon === "50d" && (
+                <img src="https://openweathermap.org/img/wn/50d@2x.png" alt=''></img>
+              )}
+              {this.props.data.weather[0].icon === "01d" && (
+                <img src="https://openweathermap.org/img/wn/01d@2x.png" alt=''></img>
+              )}
+              {this.props.data.weather[0].icon === "01n" && (
+                <img src="https://openweathermap.org/img/wn/01n@2x.png" alt=''></img>
+              )}
+              {this.props.data.weather[0].icon === "02d" && (
+                <img src="https://openweathermap.org/img/wn/02d@2x.png" alt=''></img>
+              )}
+              {this.props.data.weather[0].icon === "02n" && (
+                <img src="https://openweathermap.org/img/wn/02n@2x.png" alt=''></img>
+              )}
+              {this.props.data.weather[0].icon === "03d" && (
+                <img src="https://openweathermap.org/img/wn/03d@2x.png" alt=''></img>
+              )}
+              {this.props.data.weather[0].icon === "03n" && (
+                <img src="https://openweathermap.org/img/wn/03n@2x.png" alt=''></img>
+              )}
+              {this.props.data.weather[0].icon === "04d" && (
+                <img src="https://openweathermap.org/img/wn/04d@2x.png" alt=''></img>
+              )}
+              {this.props.data.weather[0].icon === "04n" && (
+                <img src="https://openweathermap.org/img/wn/04n@2x.png" alt=''></img>
+              )}
             </Card.Text>
           </Card.Body>
         </Card>

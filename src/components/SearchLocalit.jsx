@@ -31,8 +31,8 @@ class SearchLocalit extends Component {
 
         fetch(url)
           .then((response) => {
-            console.log("response", response);
-            console.log("url fetch", url);
+            // console.log("response", response);
+            // console.log("url fetch", url);
             if (response.ok) {
               return response.json();
             } else {
@@ -66,8 +66,8 @@ class SearchLocalit extends Component {
 
         fetch(url)
           .then((response) => {
-            console.log("response", response);
-            console.log("url fetch five days", url);
+            // console.log("response", response);
+            // console.log("url fetch five days", url);
             if (response.ok) {
               return response.json();
             } else {
@@ -93,17 +93,17 @@ class SearchLocalit extends Component {
     }
   };
   fetchWeatherWithNoAutorization = () => {
-    console.log("fetch con select");
-    console.log("state location id", this.state.locationID);
+    // console.log("fetch con select");
+    // console.log("state location id", this.state.locationID);
 
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.locationID}&appid=8d3bae94456e6a1dbe66ca4b6182e29e`;
     fetch(url)
       .then((response) => {
-        console.log("response", response);
-        console.log(
-          "url fetch con location inserita manualmente da select",
-          url
-        );
+        // console.log("response", response);
+        // console.log(
+        //   "url fetch con location inserita manualmente da select",
+        //   url
+        // );
         if (response.ok) {
           return response.json();
         } else {
@@ -138,8 +138,8 @@ class SearchLocalit extends Component {
 
     fetch(url)
       .then((response) => {
-        console.log("response", response);
-        console.log("url fetch five days", url);
+        // console.log("response", response);
+        // console.log("url fetch five days", url);
         if (response.ok) {
           return response.json();
         } else {
@@ -211,14 +211,14 @@ class SearchLocalit extends Component {
         {/* <Col xs={12} md={4} lg={2}> */}
 
         {/* <Weather data={this.state.weatherData}/> */}
-        {
+        {/* {
           console.log(
             "stato e 5days",
             this.state.weatherData,
             this.state.weatherDataFiveDays
           )
           // console.log("stato five days",this.state.weatherDataFiveDays )
-        }
+        } */}
         {this.state.weatherData && <Weather data={this.state.weatherData} />}
         {<WeatherDataFiveDays data={this.state.weatherDataFiveDays} />}
         {/* </Col> */}
