@@ -6,6 +6,7 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Weather from './Weather';
+import weatherDataFiveDays from './WeatherFiveDays';
 
 import { useState, useEffect } from "react";
 
@@ -22,23 +23,14 @@ class SearchLocalit extends Component {
 state={
     // weatherAdv : '',
     locationID : 'Senise',
-    weatherData : ''
+    weatherData : '',
+    weatherDataFiveDays : ''
 
 };
 
 
 fetchWeatherWithLocAutorization = () => {
-    // api.openweathermap.org/data/2.5/weather?q=Chiaromonte,it&APPID=8d3bae94456e6a1dbe66ca4b6182e29e
-    
-    // const url ='api.openweathermap.org/data/2.5/weather?q=';
-    // const locationWeather = this.state.locationID + ',it';
-    // const apiKey = '&APPID=8d3bae94456e6a1dbe66ca4b6182e29e';
-    // const urlFetchWeaterAdvanced = url + locationWeather + apiKey
 
-    // console.log("url completa", urlFetchWeaterAdvanced)
-
-
-    // let url=''
 
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition((position)=>{
@@ -47,10 +39,7 @@ fetchWeatherWithLocAutorization = () => {
             // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
             const url=`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=8d3bae94456e6a1dbe66ca4b6182e29e`
         
-    // }else{
-    //     url = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.locationID}&appid=8d3bae94456e6a1dbe66ca4b6182e29e`
 
-    // }
     fetch(url)
     .then((response) => {
         console.log("response", response)
@@ -66,9 +55,7 @@ fetchWeatherWithLocAutorization = () => {
       })
       .then((data) => {
         console.log('dati da fetch', data)
-        // qua tra poco le salveremo anche nello state...
 
-        // COME SI SALVA STATO
         this.setState({
             weatherData : data
         })
@@ -83,41 +70,52 @@ fetchWeatherWithLocAutorization = () => {
             
     })
     }
-    // else{
-    //     console.log("fetch con select")
-    //     console.log("state location id", this.state.locationID)
 
-    //     let url = `https://api.openweathermap.org/data/2.5/weather?q=${this.state.locationID}&appid=8d3bae94456e6a1dbe66ca4b6182e29e`
-    //     fetch(url)
-    // .then((response) => {
-    //     console.log("response", response)
-    //     console.log("url fetch con location inserita manualmente da select", url)
-    //     if (response.ok) {
+}
+fetchWeatherWithLocAutorizationFiveDays = () => {
 
-    //       return response.json() 
-    //     } else {
+
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition((position)=>{
+            const long=position.coords.longitude;
+            const lat=position.coords.latitude;
+            // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+            const url=`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=8d3bae94456e6a1dbe66ca4b6182e29e`
+        
+
+    fetch(url)
+    .then((response) => {
+        console.log("response", response)
+        console.log("url fetch five days", url)
+        if (response.ok) {
+
+          return response.json() 
+        } else {
       
-    //       throw new Error('Problema nella chiamata API')
+          throw new Error('Problema nella chiamata API')
 
-    //     }
-    //   })
-    //   .then((data) => {
-    //     console.log('dati da fetch', data)
-    //     // qua tra poco le salveremo anche nello state...
+        }
+      })
+      .then((data) => {
+        console.log('dati da fetch five days', data)
 
-    //     // COME SI SALVA STATO
-    //     this.setState({
-    //         weatherData : data
-    //     })
-    //     // setIsLoading(false)
-    //     // METTERE LOADING
-    //   })
-    //   .catch((error) => {
-    //     console.log('ERRORE', error)
-    //     // setIsLoading(false)
-    //     // setIsError(true)
-    //   })
-    // }
+
+        // COME SI SALVA STATO
+        this.setState({
+            weatherDataFiveDays : data
+        })
+        // setIsLoading(false)
+        // METTERE LOADING
+      })
+      .catch((error) => {
+        console.log('ERRORE', error)
+        // setIsLoading(false)
+        // setIsError(true)
+      })
+            
+    })
+    }
+
 }
  fetchWeatherWithNoAutorization=()=>{
     console.log("fetch con select")
@@ -157,6 +155,7 @@ fetchWeatherWithLocAutorization = () => {
 
 componentDidMount(){
     this.fetchWeatherWithLocAutorization()
+    this.fetchWeatherWithLocAutorizationFiveDays()
     console.log("component did mount")
 }
 
@@ -203,6 +202,11 @@ render(){
                     <Weather data={this.state.weatherData}/> 
                 )
               }
+              {/* {
+                this.state.weatherData && (
+                    <weatherDataFiveDays data={this.state.weatherDataFiveDays}/> 
+                )
+              } */}
             </Col>
           </Row>
 

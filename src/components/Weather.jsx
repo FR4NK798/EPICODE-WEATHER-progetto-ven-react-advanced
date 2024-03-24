@@ -6,17 +6,14 @@ import { useState, useEffect } from "react";
 
 
 class Weather extends Component{
-
-        // state={
-        //     dati : this.props.data,
-        //     // locationID : this.props.location,
-        
-        // };
-
-        
-             
-          
+    state={
+        // weatherAdv : '',
+        locationID : 'Senise',
+        weatherData : '',
+        weatherDataFiveDays : ''
     
+    };
+
     render(){
         const gradi = Math.ceil(this.props.data.main.temp - 273)
         return(
