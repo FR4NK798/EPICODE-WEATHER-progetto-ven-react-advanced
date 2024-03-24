@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/search:locationID" element={<MeteoFetch />}></Route>
         </Routes>
-        <FooterWeather />
+        {/* <FooterWeather /> */}
       </BrowserRouter>
     </>
   );
