@@ -6,7 +6,7 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Weather from './Weather';
-import weatherDataFiveDays from './WeatherFiveDays';
+import WeatherDataFiveDays from './WeatherFiveDays';
 
 import { useState, useEffect } from "react";
 
@@ -102,7 +102,7 @@ fetchWeatherWithLocAutorizationFiveDays = () => {
 
         // COME SI SALVA STATO
         this.setState({
-            weatherDataFiveDays : data
+            weatherDataFiveDays : data.list
         })
         // setIsLoading(false)
         // METTERE LOADING
@@ -191,24 +191,26 @@ render(){
                   </Form.Select>
                 </Form.Group>
               </Form>
-              <Row className="justify-content-center">
-            <Col xs={12} md={8} lg={6}>
+              {/* <Row className="justify-content-center"> */}
+            {/* <Col xs={12} md={4} lg={2}> */}
 
               {/* <Weather data={this.state.weatherData}/> */}{
-                console.log("stato", this.state.weatherData)
+                console.log("stato e 5days", this.state.weatherData , this.state.weatherDataFiveDays)
+                // console.log("stato five days",this.state.weatherDataFiveDays )
               }
               {
                 this.state.weatherData && (
                     <Weather data={this.state.weatherData}/> 
-                )
+                ) 
               }
-              {/* {
-                this.state.weatherData && (
-                    <weatherDataFiveDays data={this.state.weatherDataFiveDays}/> 
-                )
-              } */}
-            </Col>
-          </Row>
+              {
+                
+             
+                    <WeatherDataFiveDays data={this.state.weatherDataFiveDays}/> 
+                
+              }
+            {/* </Col> */}
+          {/* </Row> */}
 
               </>
     
