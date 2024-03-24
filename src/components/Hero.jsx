@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button'
 
 const Hero = () => {
   return (
-    <div>
+
       <video
         autoPlay
         muted
@@ -19,14 +19,7 @@ const Hero = () => {
         Your browser does not support HTML5 video.
       </video>
 
-{/*       
-      <div className="content">
-        <h1>Benveuto nel meteo di EPICODE</h1>
-        <p>Scegli una località</p>
-      </div> */}
-      {/* form ricerca */}
-      
-    </div>
+
   );
 };
 export default Hero;

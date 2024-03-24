@@ -14,7 +14,8 @@ class Weather extends Component {
     const gradi = Math.ceil(this.props.data.main.temp - 273);
     return (
       <>
-        <Card className="position-relative weather-position">
+        {/* <Card className="position-relative weather-position"> */}
+        <Card>
           {/* <Card.Img
               variant="top"
             //   src={this.state.movieData.Poster}

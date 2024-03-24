@@ -96,7 +96,7 @@ class weatherDataFiveDays extends Component {
       <Accordion.Item eventKey="0">
         <Accordion.Header>Mostra Prevision dei prossimi 4 giorni</Accordion.Header>
         <Accordion.Body>
-        <Row xs={12} md={6} lg={2}>
+        <Row className="row-cols-lg-5 row-cols-md-4 row-cols-xs-1">
         
             {
 
@@ -150,7 +150,7 @@ class weatherDataFiveDays extends Component {
 
               }else{
                 return (
-                    <Col key={i}>
+                    <Col key={i}  >
                   <Card className=" weather-position giorno-attuale" >
                     <Card.Body>
                       <Card.Title>DATA : {giorno.dt_txt}</Card.Title>

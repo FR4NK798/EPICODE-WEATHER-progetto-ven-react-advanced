@@ -145,7 +145,8 @@ class SearchLocalit extends Component {
     return (
       <>
         <Form>
-          <Form.Group className="my-3 position-absolute">
+          {/* <Form.Group className="my-3 position-absolute"> */}
+          <Form.Group>
             <Form.Label id="select-label">Scegli una località</Form.Label>
             <Form.Select
               onChange={(e) => {

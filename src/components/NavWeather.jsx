@@ -17,12 +17,19 @@ const NavWeather = () => {
 //   const [locationID, setLocationID] = useState('')
 
   return (
+    // <Navbar
+    //   collapseOnSelect
+    //   expand="lg"
+    //   bg={currentTime > 16 ? "dark" : "primary"}
+    //   data-bs-theme="dark"
+    //   className="z-index"
+    // >
     <Navbar
       collapseOnSelect
       expand="lg"
       bg={currentTime > 16 ? "dark" : "primary"}
       data-bs-theme="dark"
-      className="z-index"
+     
     >
       <Container fluid>
         <Navbar.Brand href="#home">EPICODE WEATHER</Navbar.Brand>
