@@ -1,3 +1,8 @@
+# App creata con react per il meteo.
+
+<img width="835" alt="Schermata 2024-11-28 alle 22 20 28" src="https://github.com/user-attachments/assets/233aad02-1292-447f-87bd-276464e46fa6">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
